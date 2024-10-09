@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobilemedCrud.Core\MobilemedCrud.Core.csproj" />
+    <ProjectReference Include="..\Modules\MobilemedCrud.Modules.ModuleName\MobilemedCrud.Modules.ModuleName.csproj" />
+    <ProjectReference Include="..\Services\MobilemedCrud.Services.Interfaces\MobilemedCrud.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\MobilemedCrud.Services\MobilemedCrud.Services.csproj" />
+  </ItemGroup>
+</Project>
