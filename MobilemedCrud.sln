@@ -1,23 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.11.35312.102
+VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{4C4478DE-4EE9-4FBA-84A2-D39E57F1ACB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud", "MobilemedCrud\MobilemedCrud.csproj", "{E301B374-A7C1-4A3C-90BF-D2FCAA01F73D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Modules.ModuleName", "MobilemedCrud\Modules\MobilemedCrud.Modules.ModuleName\MobilemedCrud.Modules.ModuleName.csproj", "{6154991B-B054-4522-A68F-18B8D127E661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Database", "Database\MobilemedCrud.Database.csproj", "{A9089219-410E-4E22-AB6D-F650A822E2D9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8A935E4A-D11C-40E4-8855-416518AB81A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Core", "Core\MobilemedCrud.Core.csproj", "{563FCF9F-2689-430B-AE46-DD0C1C15C8DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Services", "MobilemedCrud\Services\MobilemedCrud.Services\MobilemedCrud.Services.csproj", "{6E8A9ED9-B472-4D49-8BF6-B553CDB0C523}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{B2660C37-3481-4E6B-BB06-A58E17360DB7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Services.Interfaces", "MobilemedCrud\Services\MobilemedCrud.Services.Interfaces\MobilemedCrud.Services.Interfaces.csproj", "{E299BD39-C1D7-4C59-A3F3-E96DB2CFC1AB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud", "MobilemedCrud\MobilemedCrud\MobilemedCrud.csproj", "{19E437CD-ABC4-4B05-B7EB-DCA2DDB1C9D7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Core", "MobilemedCrud\MobilemedCrud.Core\MobilemedCrud.Core.csproj", "{ABE1591B-5FFB-4170-BFB5-F5792C0EE43E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Model", "MobilemedCrud.Model\MobilemedCrud.Model.csproj", "{2EA07731-084C-45DA-8125-A273B07BA43F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilemedCrud.Registry", "Modules\MobilemedCrud.Registry.csproj", "{9271F6BA-3E39-45E4-94B9-696F3B5B4DC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,40 +19,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6154991B-B054-4522-A68F-18B8D127E661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6154991B-B054-4522-A68F-18B8D127E661}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6154991B-B054-4522-A68F-18B8D127E661}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6154991B-B054-4522-A68F-18B8D127E661}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E8A9ED9-B472-4D49-8BF6-B553CDB0C523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E8A9ED9-B472-4D49-8BF6-B553CDB0C523}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E8A9ED9-B472-4D49-8BF6-B553CDB0C523}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E8A9ED9-B472-4D49-8BF6-B553CDB0C523}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E299BD39-C1D7-4C59-A3F3-E96DB2CFC1AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E299BD39-C1D7-4C59-A3F3-E96DB2CFC1AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E299BD39-C1D7-4C59-A3F3-E96DB2CFC1AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E299BD39-C1D7-4C59-A3F3-E96DB2CFC1AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19E437CD-ABC4-4B05-B7EB-DCA2DDB1C9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19E437CD-ABC4-4B05-B7EB-DCA2DDB1C9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19E437CD-ABC4-4B05-B7EB-DCA2DDB1C9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19E437CD-ABC4-4B05-B7EB-DCA2DDB1C9D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABE1591B-5FFB-4170-BFB5-F5792C0EE43E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABE1591B-5FFB-4170-BFB5-F5792C0EE43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABE1591B-5FFB-4170-BFB5-F5792C0EE43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABE1591B-5FFB-4170-BFB5-F5792C0EE43E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2EA07731-084C-45DA-8125-A273B07BA43F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2EA07731-084C-45DA-8125-A273B07BA43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2EA07731-084C-45DA-8125-A273B07BA43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2EA07731-084C-45DA-8125-A273B07BA43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E301B374-A7C1-4A3C-90BF-D2FCAA01F73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E301B374-A7C1-4A3C-90BF-D2FCAA01F73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E301B374-A7C1-4A3C-90BF-D2FCAA01F73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E301B374-A7C1-4A3C-90BF-D2FCAA01F73D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9089219-410E-4E22-AB6D-F650A822E2D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9089219-410E-4E22-AB6D-F650A822E2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9089219-410E-4E22-AB6D-F650A822E2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9089219-410E-4E22-AB6D-F650A822E2D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{563FCF9F-2689-430B-AE46-DD0C1C15C8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{563FCF9F-2689-430B-AE46-DD0C1C15C8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{563FCF9F-2689-430B-AE46-DD0C1C15C8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{563FCF9F-2689-430B-AE46-DD0C1C15C8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9271F6BA-3E39-45E4-94B9-696F3B5B4DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9271F6BA-3E39-45E4-94B9-696F3B5B4DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9271F6BA-3E39-45E4-94B9-696F3B5B4DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9271F6BA-3E39-45E4-94B9-696F3B5B4DC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6154991B-B054-4522-A68F-18B8D127E661} = {4C4478DE-4EE9-4FBA-84A2-D39E57F1ACB0}
-		{6E8A9ED9-B472-4D49-8BF6-B553CDB0C523} = {8A935E4A-D11C-40E4-8855-416518AB81A6}
-		{E299BD39-C1D7-4C59-A3F3-E96DB2CFC1AB} = {8A935E4A-D11C-40E4-8855-416518AB81A6}
+		{9271F6BA-3E39-45E4-94B9-696F3B5B4DC2} = {B2660C37-3481-4E6B-BB06-A58E17360DB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7461489A-A13F-487B-A321-CDF067C09534}
+		SolutionGuid = {28F16B15-CA6D-46CB-B6AE-A58E114283B1}
 	EndGlobalSection
 EndGlobal
