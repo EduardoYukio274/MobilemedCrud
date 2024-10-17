@@ -30,6 +30,8 @@ namespace MobilemedCrud.Database.Data
 
             builder.Property(p => p.CRM).IsRequired();
 
+            builder.Property(p => p.BirthDate).IsRequired();
+
         }
     }
 }
