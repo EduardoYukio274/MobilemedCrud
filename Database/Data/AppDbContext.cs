@@ -6,6 +6,7 @@ namespace MobilemedCrud.Database.Data
 {
     public class AppDbContext : DbContext
     {
+        // Creat the tables 
 
         public DbSet<BookMarkModel> BookMark { get; set; }
 
@@ -19,6 +20,8 @@ namespace MobilemedCrud.Database.Data
 
         }
 
+
+        // Conection and creat the Data Bank 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
@@ -32,7 +35,7 @@ namespace MobilemedCrud.Database.Data
             base.OnConfiguring(optionsBuilder);
         }
 
-
+        // Confg the tables
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder); modelBuilder.ApplyConfiguration<PatientModel>(new PatientConfiguration());

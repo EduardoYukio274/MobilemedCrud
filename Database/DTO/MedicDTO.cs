@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilemedCrud.Database.Entity
+namespace MobilemedCrud.Database.DTO
 {
-    public class MedicModel
+    public class MedicDTO
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
