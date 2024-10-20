@@ -18,12 +18,15 @@ namespace MobilemedCrud.Database.Services
             _context = context;
         }
 
-        public async Task<PatientModel> CreatNewPatient(PatientDTO patientDTO)
+        public async Task<ResponseModel<List<PatientModel>>> CreatNewPatient(PatientDTO patientDTO)
         {
+            ResponseModel<List<PatientModel>> response = new ResponseModel<List<PatientModel>>();
             try
             {
                 var Patient = new PatientModel()
                 {
+                    Id = patientDTO.Id,
+
                     Name = patientDTO.Name,
 
                     CPF = patientDTO.CPF,
@@ -58,55 +61,69 @@ namespace MobilemedCrud.Database.Services
 
                 _context.Add(Patient);
                 await _context.SaveChangesAsync();
+
+                await _context.Medic.ToListAsync();
+
+                return response;
             }
 
-            catch 
-            { 
-            
-            
+            catch (Exception ex)
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
             }
 
         }
 
-        public async Task<PatientModel> SearchPatientWithId(int Id)
+        public async Task<ResponseModel<PatientModel>> SearchPatientWithId(int Id)
         {
+            ResponseModel<PatientModel> response = new ResponseModel<PatientModel>();
             try
             {
                 var Patient = await _context.Patient.FirstOrDefaultAsync (PatientBank => PatientBank.Id == Id);
 
                 if ( Patient == null)
                 {
-                    
-
+                    response.Menssage = "Paciente não localizado";
+                    return response;
                 }
-
+                response.Data = Patient;
+                return response;
             }
 
-            catch 
-            { 
-            
-            
+            catch (Exception ex)
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
             }
         }
 
-        public async Task<PatientModel> SearchPatientWithName(string Name)
+        public async Task<ResponseModel<PatientModel>> SearchPatientWithName(string Name)
         {
+            ResponseModel<PatientModel> response = new ResponseModel<PatientModel>();
             try
             {
                 var Patient = await _context.Patient.FirstOrDefaultAsync(PatientBank => PatientBank.Name == Name);
 
                 if (Patient == null)
                 {
-
-
+                    response.Menssage = "Paciente não localizado";
+                    return response;
                 }
+                response.Data = Patient;
+                return response;
 
             }
 
-            catch
+            catch (Exception ex)
             {
-
-
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
 
             }
         }

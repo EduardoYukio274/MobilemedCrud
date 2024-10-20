@@ -1,13 +1,18 @@
-﻿using MobilemedCrud.Core;
+﻿using Microsoft.Identity.Client;
+using MobilemedCrud.Core;
+using MobilemedCrud.Database.Services;
 using MobilemedCrud.Registry.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Navigation.Regions;
 
+
 namespace MobilemedCrud.Registry
 {
     public class RegistryModule : IModule
     {
+
+
         private readonly IRegionManager _regionManager;
 
         public RegistryModule(IRegionManager regionManager)
@@ -26,6 +31,13 @@ namespace MobilemedCrud.Registry
             containerRegistry.RegisterForNavigation<PatientRegistry>(NavigationRoutes.PatientRegistry);
             containerRegistry.RegisterForNavigation<BookmarkRegistry>(NavigationRoutes.BookmarkRegistry);
             containerRegistry.RegisterForNavigation<MedicRegistry>(NavigationRoutes.MedicRegistry);
+            containerRegistry.Register<IMedicInterface, MedicService>();
+            containerRegistry.Register<IPatientInterface, PatientService>();
+            containerRegistry.Register<IBookMarkInterface, BookMarkService>();
+
         }
+
+
+
     }
 }

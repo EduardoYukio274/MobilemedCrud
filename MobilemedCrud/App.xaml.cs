@@ -1,4 +1,6 @@
-﻿using MobilemedCrud.Registry;
+﻿using Microsoft.Identity.Client;
+using MobilemedCrud.Database.Services;
+using MobilemedCrud.Registry;
 using MobilemedCrud.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
@@ -30,5 +32,6 @@ namespace MobilemedCrud
             moduleCatalog.AddModule<RegistryModule>();
         }
 
+        
     }
 }

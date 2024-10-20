@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\MobilemedCrud.Core.csproj" />
+    <ProjectReference Include="..\Database\MobilemedCrud.Database.csproj" />
   </ItemGroup>
 </Project>

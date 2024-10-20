@@ -1,4 +1,5 @@
 ﻿using MobilemedCrud.Database.DTO;
+using MobilemedCrud.Database.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace MobilemedCrud.Database.Services
 {
     public interface IPatientInterface
     {
-        Task<Entity.PatientModel> SearchPatientWithId(int Id);
+        Task<ResponseModel<PatientModel>> SearchPatientWithId(int Id);
 
-        Task<Entity.PatientModel> SearchPatientWithName(string Name);
+        Task<ResponseModel<PatientModel>> SearchPatientWithName(string Name);
 
-        Task<Entity.PatientModel> CreatNewPatient(PatientDTO patientDTO);
+        Task<ResponseModel<List<PatientModel>>> CreatNewPatient(PatientDTO patientDTO);
 
     }
 }

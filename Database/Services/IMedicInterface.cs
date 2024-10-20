@@ -10,6 +10,10 @@ namespace MobilemedCrud.Database.Services
 {
     public interface IMedicInterface
     {
-        Task<MedicModel> CreatNewMedic(MedicDTO medicDTO);
+        Task<ResponseModel<List<MedicModel>>> CreatNewMedic(MedicDTO medicDTO);
+
+        Task<ResponseModel<MedicModel>> SearchMedicWithId(int Id);
+
+        Task<ResponseModel<MedicModel>> SearchMedicWithName(string Name);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure;
+using Microsoft.EntityFrameworkCore;
 using MobilemedCrud.Database.Data;
 using MobilemedCrud.Database.DTO;
 using MobilemedCrud.Database.Entity;
@@ -20,51 +21,111 @@ namespace MobilemedCrud.Database.Services
         }
 
 
-        public Task<MedicModel> CreatNewMedic(MedicDTO medicDTO)
+        public async Task<ResponseModel<List<MedicModel>>> CreatNewMedic(MedicDTO medicDTO)
         {
-            public async Task<MedicModel> CreatNewMedic(MedicDTO medicDTO)
+
+            ResponseModel<List<MedicModel>> response = new ResponseModel<List<MedicModel>>();
+            try
             {
-                try
+                var Medic = new MedicModel()
                 {
-                    var Medic = new MedicModel()
-                    {
-                        Name = medicDTO.Name,
+                    Id = medicDTO.Id,   
 
-                        CPF = medicDTO.CPF,
+                    Name = medicDTO.Name,
 
-                        RG = medicDTO.RG,
+                    CPF = medicDTO.CPF,
 
-                        Phone = medicDTO.Phone,
+                    RG = medicDTO.RG,
 
-                        Email = medicDTO.Email,
+                    Phone = medicDTO.Phone,
 
-                        Address = medicDTO.Address,
+                    Email = medicDTO.Email,
 
-                        City = medicDTO.City,
+                    Address = medicDTO.Address,
 
-                        State = medicDTO.State,
+                    City = medicDTO.City,
 
-                        ZipCode = medicDTO.ZipCode,
+                    State = medicDTO.State,
 
-                        Country = medicDTO.Country,
+                    ZipCode = medicDTO.ZipCode,
 
-                        CRM = medicDTO.CRM,
+                    Country = medicDTO.Country,
 
-                        BirthDate = medicDTO.BirthDate,
+                    CRM = medicDTO.CRM,
 
-                    };
+                    BirthDate = medicDTO.BirthDate,
 
-                    _context.Add(Medic);
-                    await _context.SaveChangesAsync();
+                };
 
-                    await _context.Medic.ToListAsync();
-                }
+                _context.Add(Medic);
+                await _context.SaveChangesAsync();
 
-                catch
+                await _context.Medic.ToListAsync();
+
+                return response;
+
+
+
+            }
+            catch(Exception ex) 
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
+            }
+        }
+
+        public async Task<ResponseModel<MedicModel>> SearchMedicWithId(int Id)
+        {
+            ResponseModel<MedicModel> response = new ResponseModel<MedicModel>();
+            try
+            {
+                var Medic = await _context.Medic.FirstOrDefaultAsync(MedicBank => MedicBank.Id == Id);
+
+                if (Medic == null)
                 {
-
-
+                    response.Menssage = "Medico não localizado";
+                    return response;
                 }
+                response.Data = Medic;
+                return response;
+            
+
+            }
+
+            catch (Exception ex)
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
+            }
+
+        }
+
+        public async Task<ResponseModel<MedicModel>> SearchMedicWithName(string Name)
+        {
+            ResponseModel<MedicModel> response = new ResponseModel<MedicModel>();
+            try
+            {
+                var Medic = await _context.Medic.FirstOrDefaultAsync(MedicBank => MedicBank.Name == Name);
+
+                if (Medic == null)
+                {
+                    response.Menssage = "Medico não localizado";
+                    return response;
+                }
+                response.Data = Medic;
+                return response;
+            }
+
+            catch (Exception ex)
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
             }
         }
     }
