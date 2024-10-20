@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MobilemedCrud.Registry.ViewModels
 {
-    public class MedicDeletedViewModel : BindableBase
+    public class MedicDeletViewModel : BindableBase
     {
-        public MedicDeletedViewModel() 
+        public MedicDeletViewModel() 
         { 
         
         } 

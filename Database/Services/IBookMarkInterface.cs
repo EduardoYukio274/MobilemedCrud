@@ -19,6 +19,6 @@ namespace MobilemedCrud.Database.Services
 
         Task<ResponseModel<List<BookMarkModel>>> SearchMedicForIdBookMark(int MedicId);
 
-
+        Task<ResponseModel<List<BookMarkModel>>> DeletBookMark(int Id);
     }
 }

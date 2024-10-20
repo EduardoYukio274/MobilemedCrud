@@ -15,5 +15,7 @@ namespace MobilemedCrud.Database.Services
         Task<ResponseModel<MedicModel>> SearchMedicWithId(int Id);
 
         Task<ResponseModel<MedicModel>> SearchMedicWithName(string Name);
+
+        Task<ResponseModel<List<MedicModel>>> DeletMedic(int Id);
     }
 }

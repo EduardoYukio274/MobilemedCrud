@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using MobilemedCrud.Core;
+using Prism.Commands;
+using Prism.Mvvm;
+using Prism.Navigation.Regions;
 
 namespace MobilemedCrud.ViewModels
 {
@@ -11,9 +14,25 @@ namespace MobilemedCrud.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainWindowViewModel()
+        private readonly IRegionManager _regionManager;
+
+        public MainWindowViewModel(IRegionManager regionManager)
         {
+            _regionManager = regionManager;
+        }
+
+        private DelegateCommand<string> _Navigate;
+        public DelegateCommand<string> Navigate =>
+        _Navigate ?? (_Navigate = new DelegateCommand<string>(ExecuteNavigate));
+
+
+        void ExecuteNavigate(string arg)
+        {
+            Title = arg;
+
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, arg);
 
         }
+
     }
 }

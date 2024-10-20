@@ -20,7 +20,7 @@ namespace MobilemedCrud.Database.Services
             _context = context;
         }
 
-
+        //Creat new BookMark
         public async Task<ResponseModel<List<BookMarkModel>>> CreatNewBookMark(BookMarkModel bookMarkModel)
         {
             ResponseModel<List<BookMarkModel>> response = new ResponseModel<List<BookMarkModel>>();
@@ -55,13 +55,43 @@ namespace MobilemedCrud.Database.Services
             }
         }
 
+        //Delet a BookMark
+        public async Task<ResponseModel<List<BookMarkModel>>> DeletBookMark(int Id)
+        {
+            ResponseModel<List<BookMarkModel>> response = new ResponseModel<List<BookMarkModel>>();
+            try
+            {
+                var BookMark = await _context.BookMark.FirstOrDefaultAsync(BookMarkBank => BookMarkBank.Id == Id);
 
+                if (BookMark == null)
+                {
+                    response.Menssage = "Nenhum consulta não localizado";
+                    return response;
+                }
+                _context.Remove(BookMark);
+                await _context.SaveChangesAsync();
+
+                response.Data = await _context.BookMark.ToListAsync();
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
+            }
+        }
+
+        //Search for a BookMark with some MedicId
         public async Task<ResponseModel<List<BookMarkModel>>> SearchMedicForIdBookMark(int MedicId)
         {
             ResponseModel<List<BookMarkModel>> response = new ResponseModel<List<BookMarkModel>>();
             try
             {
-                var BookMark = await _context.BookMark.FirstOrDefaultAsync(BookMarkBank => BookMarkBank.Medic.Id == MedicId);
+                var BookMark = await _context.BookMark.Include(BookMark => MedicId).
+                    Where(BookMarkBank => BookMarkBank.Medic.Id == MedicId).ToListAsync();
 
                 if (BookMark == null)
                 {
@@ -83,13 +113,14 @@ namespace MobilemedCrud.Database.Services
             }
         }
 
+        //Search for a BookMark with some PatientId
         public async Task<ResponseModel<List<BookMarkModel>>> SearchPatientForIdBookMark(int PatientId)
         {
             ResponseModel<List<BookMarkModel>> response = new ResponseModel<List<BookMarkModel>>();
             try
             {
                 var BookMark = await _context.BookMark.Include(BookMark => PatientId).
-                FirstOrDefaultAsync(BookMarkBank => BookMarkBank.Patient.Id == PatientId);
+                Where(BookMarkBank => BookMarkBank.Patient.Id == PatientId).ToListAsync();
 
                 if (BookMark == null)
                 {

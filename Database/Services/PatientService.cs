@@ -18,6 +18,7 @@ namespace MobilemedCrud.Database.Services
             _context = context;
         }
 
+        //Creat a new Patient
         public async Task<ResponseModel<List<PatientModel>>> CreatNewPatient(PatientDTO patientDTO)
         {
             ResponseModel<List<PatientModel>> response = new ResponseModel<List<PatientModel>>();
@@ -77,6 +78,7 @@ namespace MobilemedCrud.Database.Services
 
         }
 
+        //Search a Patient with his/her Id
         public async Task<ResponseModel<PatientModel>> SearchPatientWithId(int Id)
         {
             ResponseModel<PatientModel> response = new ResponseModel<PatientModel>();
@@ -102,6 +104,7 @@ namespace MobilemedCrud.Database.Services
             }
         }
 
+        //Search a Patient with his/her Name
         public async Task<ResponseModel<PatientModel>> SearchPatientWithName(string Name)
         {
             ResponseModel<PatientModel> response = new ResponseModel<PatientModel>();

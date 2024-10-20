@@ -11,7 +11,7 @@ namespace MobilemedCrud.Database.Commands
     {
 
 
-        public static void AddOrUpdate <TEntity> (this System.Data.Entity.IDbSet<TEntity> set, params TEntity[] entities) where TEntity : class;
+        
 
 
 

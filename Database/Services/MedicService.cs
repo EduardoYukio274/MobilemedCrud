@@ -20,7 +20,7 @@ namespace MobilemedCrud.Database.Services
             _context = context;
         }
 
-
+        //Create a new Medic
         public async Task<ResponseModel<List<MedicModel>>> CreatNewMedic(MedicDTO medicDTO)
         {
 
@@ -76,6 +76,38 @@ namespace MobilemedCrud.Database.Services
             }
         }
 
+        //Delet a Medic
+        public async Task<ResponseModel<List<MedicModel>>> DeletMedic(int Id)
+        {
+            ResponseModel<List<MedicModel>> response = new ResponseModel<List<MedicModel>>();
+            
+            try
+            {
+                var Medic = await _context.Medic.FirstOrDefaultAsync(MedicBank => MedicBank.Id == Id);
+
+                if (Medic == null)
+                {
+                    response.Menssage = "Medico não localizado";
+                    return response;
+                }
+                _context.Remove(Medic);
+                await _context.SaveChangesAsync();
+
+                response.Data =  await _context.Medic.ToListAsync();
+                return response;
+
+            }
+            catch (Exception ex)
+            {
+                response.Menssage = ex.Message;
+                response.Status = false;
+                return response;
+
+            }
+
+        }
+
+        //Search a Medic with his/her Id
         public async Task<ResponseModel<MedicModel>> SearchMedicWithId(int Id)
         {
             ResponseModel<MedicModel> response = new ResponseModel<MedicModel>();
@@ -104,6 +136,7 @@ namespace MobilemedCrud.Database.Services
 
         }
 
+        //Search a Medic with his/her Name
         public async Task<ResponseModel<MedicModel>> SearchMedicWithName(string Name)
         {
             ResponseModel<MedicModel> response = new ResponseModel<MedicModel>();
