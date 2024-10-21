@@ -6,7 +6,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True" Height="436" Width="718">
     <Grid Background="Red">
         <Grid>
-            <DataGrid ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
+            <DataGrid ItemsSource="{Binding MedicModels}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
             <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Id do Médico:" VerticalAlignment="Center" Width="120"/>
             <Button Content="Demitir Médico" HorizontalAlignment="Left" Margin="478,209,0,0" VerticalAlignment="Top"/>
         </Grid>

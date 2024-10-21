@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MobilemedCrud.Database.Commands
 {
-    public class CommandsCrud : AppDbContext
+    public class CommandsCrud
     {
 
         

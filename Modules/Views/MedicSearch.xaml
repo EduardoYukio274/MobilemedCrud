@@ -7,7 +7,7 @@
 
     <Grid Background="Red">
         <Grid>
-            <DataGrid ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
+            <DataGrid ItemsSource="{Binding MedicModels}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
             <TextBox HorizontalAlignment="Left" Margin="151,115,0,0" TextWrapping="Wrap" Text="Id do Médico:" VerticalAlignment="Top" Width="120"/>
             <TextBox HorizontalAlignment="Left" Margin="151,238,0,0" TextWrapping="Wrap" Text="Nome do Méidco:" VerticalAlignment="Top" Width="120"/>
             <Button Content="Procurar médico pelo Id" HorizontalAlignment="Left" Margin="343,112,0,0" VerticalAlignment="Top"/>

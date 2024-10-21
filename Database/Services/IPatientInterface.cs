@@ -15,6 +15,6 @@ namespace MobilemedCrud.Database.Services
         Task<ResponseModel<PatientModel>> SearchPatientWithName(string Name);
 
         Task<ResponseModel<List<PatientModel>>> CreatNewPatient(PatientDTO patientDTO);
-
+        List<PatientModel> ListAllPatient();
     }
 }

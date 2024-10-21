@@ -1,4 +1,6 @@
-﻿using Prism.Mvvm;
+﻿using MobilemedCrud.Database.Entity;
+using MobilemedCrud.Database.Services;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,16 @@ namespace MobilemedCrud.Registry.ViewModels
 {
     public class MedicDeletViewModel : BindableBase
     {
-        public MedicDeletViewModel() 
-        { 
-        
-        } 
-        
+        private readonly IMedicInterface _medicInterface;
+        public List<MedicModel> MedicModels { get; set; }
+        public MedicDeletViewModel(IMedicInterface medicInterface)
+        {
+            _medicInterface = medicInterface;
+
+            MedicModels = _medicInterface.ListAllMedic();
+
+        }
+
     }
 
 }

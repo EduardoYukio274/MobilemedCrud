@@ -107,6 +107,12 @@ namespace MobilemedCrud.Database.Services
 
         }
 
+        public List<MedicModel> ListAllMedic()
+        {
+
+            return _context.Medic.ToList();
+        }
+
         //Search a Medic with his/her Id
         public async Task<ResponseModel<MedicModel>> SearchMedicWithId(int Id)
         {
