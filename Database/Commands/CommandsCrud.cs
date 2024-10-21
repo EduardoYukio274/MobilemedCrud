@@ -10,8 +10,9 @@ namespace MobilemedCrud.Database.Commands
     public class CommandsCrud : AppDbContext
     {
 
-
         
+
+
 
 
 

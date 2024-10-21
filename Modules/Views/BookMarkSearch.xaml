@@ -1,0 +1,16 @@
+﻿<UserControl 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/" 
+             xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="MobilemedCrud.Registry.Views.BookMarkSearch"             
+             prism:ViewModelLocator.AutoWireViewModel="True" Height="436" Width="718">
+    <Grid Background="Chartreuse">
+        <Grid>
+            <DataGrid ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
+            <TextBox HorizontalAlignment="Left" Margin="151,115,0,0" TextWrapping="Wrap" Text="Id do Médico:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="151,238,0,0" TextWrapping="Wrap" Text="Id do Paciente:" VerticalAlignment="Top" Width="120"/>
+            <Button Content="Pesquisar Médico" HorizontalAlignment="Left" Margin="343,112,0,0" VerticalAlignment="Top"/>
+            <Button Content="Pesquisar Paciente" HorizontalAlignment="Left" Margin="343,234,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</UserControl>

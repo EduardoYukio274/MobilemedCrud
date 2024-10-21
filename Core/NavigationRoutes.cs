@@ -11,6 +11,10 @@ namespace MobilemedCrud.Core
         public const string PatientRegistry = "PatientRegistry";
         public const string MedicRegistry = "MedicRegistry";
         public const string BookmarkRegistry = "BookmarkRegistry";
-
+        public const string PatientSearch = "PatientSearch";
+        public const string MedicSearch= "MedicSearch";
+        public const string BookMarkSearch = "BookMarkSearch";
+        public const string MedicDelet = "MedicDelet";
+        public const string BookMarkDelet = "BookMarkDelet";
     }
 }

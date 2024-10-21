@@ -1,9 +1,27 @@
-﻿<UserControl x:Class="MobilemedCrud.Registry.Views.MedicRegistry"
+﻿<UserControl 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"             
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="MobilemedCrud.Registry.Views.MedicRegistry"             
+             prism:ViewModelLocator.AutoWireViewModel="True" Height="400" Width="718">
     <Grid Background="Red">
-            
+        <Grid>
+            <DataGrid ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
+            <TextBox HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" Text="Id:" VerticalAlignment="Top" Width="43" TextChanged="TextBox_TextChanged"/>
+            <TextBox HorizontalAlignment="Left" Margin="74,33,0,0" TextWrapping="Wrap" Text="Nome completo:" VerticalAlignment="Top" Width="230"/>
+            <TextBox HorizontalAlignment="Left" Margin="318,33,0,0" TextWrapping="Wrap" Text="CPF:" VerticalAlignment="Top" Width="134"/>
+            <TextBox HorizontalAlignment="Left" Margin="466,33,0,0" TextWrapping="Wrap" Text="RG:" VerticalAlignment="Top" Width="162"/>
+            <TextBox HorizontalAlignment="Left" Margin="141,79,0,0" TextWrapping="Wrap" Text="Telefone:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="276,79,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="10,79,0,0" TextWrapping="Wrap" Text="Data de Nascimento:" VerticalAlignment="Top" Width="113" Height="25"/>
+            <TextBox HorizontalAlignment="Left" Margin="411,79,0,0" TextWrapping="Wrap" Text="Endereço:" VerticalAlignment="Top" Width="152"/>
+            <TextBox HorizontalAlignment="Left" Margin="577,79,0,0" TextWrapping="Wrap" Text="Cidade:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="Estado:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="150,125,0,0" TextWrapping="Wrap" Text="CEP:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="286,125,0,0" TextWrapping="Wrap" Text="País:" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="427,125,0,0" TextWrapping="Wrap" Text="CRM:" VerticalAlignment="Top" Width="91"/>
+
+            <Button Content="Salvar" Margin="606,358,21,0" VerticalAlignment="Top"/>
+        </Grid>
     </Grid>
 </UserControl>

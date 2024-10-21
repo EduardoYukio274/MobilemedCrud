@@ -84,6 +84,11 @@ namespace MobilemedCrud.Database.Services
             }
         }
 
+        public List<BookMarkModel> ListAllBookMark()
+        {
+           return _context.BookMark.ToList();
+        }
+
         //Search for a BookMark with some MedicId
         public async Task<ResponseModel<List<BookMarkModel>>> SearchMedicForIdBookMark(int MedicId)
         {

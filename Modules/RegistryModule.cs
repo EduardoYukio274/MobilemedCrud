@@ -31,6 +31,11 @@ namespace MobilemedCrud.Registry
             containerRegistry.RegisterForNavigation<PatientRegistry>(NavigationRoutes.PatientRegistry);
             containerRegistry.RegisterForNavigation<BookmarkRegistry>(NavigationRoutes.BookmarkRegistry);
             containerRegistry.RegisterForNavigation<MedicRegistry>(NavigationRoutes.MedicRegistry);
+            containerRegistry.RegisterForNavigation<PatientSearch>(NavigationRoutes.PatientSearch);
+            containerRegistry.RegisterForNavigation<MedicSearch>(NavigationRoutes.MedicSearch);
+            containerRegistry.RegisterForNavigation<BookMarkSearch>(NavigationRoutes.BookMarkSearch);
+            containerRegistry.RegisterForNavigation<MedicDelet>(NavigationRoutes.MedicDelet);
+            containerRegistry.RegisterForNavigation<BookMarkDelet>(NavigationRoutes.BookMarkDelet);
             containerRegistry.Register<IMedicInterface, MedicService>();
             containerRegistry.Register<IPatientInterface, PatientService>();
             containerRegistry.Register<IBookMarkInterface, BookMarkService>();

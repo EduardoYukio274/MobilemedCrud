@@ -4,21 +4,37 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:core="clr-namespace:MobilemedCrud.Core;assembly=MobilemedCrud.Core"
-        Title="{Binding Title}" Height="350" Width="525" >
+        Title="{Binding Title}" Height="436" Width="900" >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="436*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" MinWidth="182"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Background="Black">
+        <Grid Grid.Column="0" Background="Black" Grid.RowSpan="2">
             <StackPanel>
                 <Button Width="180" Height="50" Content="Cadastro de Paciente" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.PatientRegistry}" Background="#FF4A62E2"   />
                 <Button Width="180" Height="50" Content="Cadastro de Medico"   Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.MedicRegistry}" Background="#FF4A62E2"  />
                 <Button Width="180" Height="50" Content="Cadastro de Consulta" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.BookmarkRegistry}"  Background="#FF4A62E2"  />
+                <Button Width="180" Height="50" Content="Pesquisar Paciente" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.PatientSearch}" Background="#FF4A62E2"   />
+                <Button Width="180" Height="50" Content="Pesquisar Medico" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.MedicSearch}" Background="#FF4A62E2"   />
+                <Button Width="180" Height="50" Content="Pesquisar Consulta" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.BookMarkSearch}" Background="#FF4A62E2"   />
+                <Button Width="180" Height="50" Content="Demitir Medico" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.MedicDelet}" Background="#FF4A62E2"   />
+                <Button Width="180" Height="46" Content="Cancelar Consulta" Command="{Binding Navigate}" CommandParameter="{x:Static core:NavigationRoutes.BookMarkDelet}" Background="#FF4A62E2"   />
             </StackPanel>
         </Grid>
-        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" >
-
+        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
+            <ContentControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ContentControl.RenderTransform>
         </ContentControl>
     </Grid>
 </Window>
