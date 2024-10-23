@@ -84,6 +84,7 @@ namespace MobilemedCrud.Database.Services
             }
         }
 
+        //List All BookMark
         public List<BookMarkModel> ListAllBookMark()
         {
            return _context.BookMark.ToList();

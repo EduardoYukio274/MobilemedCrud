@@ -14,14 +14,7 @@ namespace MobilemedCrud.Database.Data
 
         public DbSet<PatientModel> Patient { get; set; }
 
-
-        public AppDbContext()
-        {
-
-        }
-
-
-        // Conection and creat the Data Bank 
+        // Conection and creat the DB
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
@@ -43,6 +36,7 @@ namespace MobilemedCrud.Database.Data
             base.OnModelCreating(modelBuilder); modelBuilder.ApplyConfiguration<BookMarkModel>(new BookMarkConfiguration());
         }
 
+        //Update the DB
         public static void UpdateDatabase()
         {
             using (AppDbContext context = new AppDbContext())

@@ -19,6 +19,8 @@ namespace MobilemedCrud.Registry.ViewModels
 
             BookMarkModels = _bookMarkInterface.ListAllBookMark();
 
+            
+
         }
 
         

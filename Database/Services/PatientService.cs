@@ -78,6 +78,7 @@ namespace MobilemedCrud.Database.Services
 
         }
 
+        //List All Patient
         public List<PatientModel> ListAllPatient()
         {
             return _context.Patient.ToList();

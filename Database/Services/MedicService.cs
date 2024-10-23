@@ -107,6 +107,7 @@ namespace MobilemedCrud.Database.Services
 
         }
 
+        // List All Medic
         public List<MedicModel> ListAllMedic()
         {
 

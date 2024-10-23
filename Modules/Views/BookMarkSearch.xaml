@@ -6,7 +6,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True" Height="436" Width="718">
     <Grid Background="Chartreuse">
         <Grid>
-            <DataGrid ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
+            <DataGrid ItemsSource="{Binding BookMarkModels}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,-3,0"/>
             <TextBox HorizontalAlignment="Left" Margin="151,115,0,0" TextWrapping="Wrap" Text="Id do Médico:" VerticalAlignment="Top" Width="120"/>
             <TextBox HorizontalAlignment="Left" Margin="151,238,0,0" TextWrapping="Wrap" Text="Id do Paciente:" VerticalAlignment="Top" Width="120"/>
             <Button Content="Pesquisar Médico" HorizontalAlignment="Left" Margin="343,112,0,0" VerticalAlignment="Top"/>
